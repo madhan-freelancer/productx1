@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { useNavigate } from 'react-router-dom';
 import './login.css';
-import { FaEnvelope, FaLock } from 'react-icons/fa';
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { Button, CardBody, Col, FormGroup, Input, InputGroup, InputGroupText, Row, Spinner } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLockOpen } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/img/roundview-logo.png';
 import logoone from '../assets/img/product x1-2.png';
@@ -16,6 +14,8 @@ import { useForm } from "react-hook-form";
 import { Form, } from 'semantic-ui-react';
 import { callApi } from "../../utils/api";
 import { History } from "history";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface AllProps {
   history: any,
@@ -62,9 +62,18 @@ export default class Login extends Component {
       .then(res => res.data)
       .then(response => {
         if (response['success'] == true) {
-          window.location.href = '/dashboard';
+
+          toast.success("Login successful!", {
+          });
+
+          setTimeout(() => {
+            window.location.href = "/dashboard"; 
+          }, 2000);
+         
         } else {
-          alert("Enter Email and Password to Proceed");
+          // alert("Enter Email and Password to Proceed");
+          toast.success("Login Unsuccessful!", {hideProgressBar: true,icon:false,
+          });
         }
       })
       .catch(err => {
@@ -74,7 +83,22 @@ export default class Login extends Component {
 
   render() {
     return (
-      <>
+      <main>
+                <ToastContainer
+  position="top-center"
+  autoClose={2000}
+  hideProgressBar={true}
+  newestOnTop={false}
+  closeButton={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  style={{ top: 450, left: 483, right: 0, bottom: 0 ,width: 400}}
+/>
+
+
         <div className="main">
           <div className="container">
             <Row>
@@ -112,7 +136,7 @@ export default class Login extends Component {
                           </label>
                           <InputGroup className="input-group">
                             <div>
-                              <FontAwesomeIcon icon={faLockOpen} className="fontawesome" />
+                              <FontAwesomeIcon icon={faLock} className="fontawesome" />
                               <Input placeholder="Password" type="password" name="password" className="inputclass"
                                 onChange={this.onchange} />
                             </div>
@@ -125,7 +149,7 @@ export default class Login extends Component {
                         </p>
 
                         <Button className=" cta cta-fullwidth " color="primary" type="submit" onClick={this.handleClick}>
-                          Signin
+                          Sign In
                         </Button>
                       </div>
                     </Form>
@@ -145,7 +169,7 @@ export default class Login extends Component {
 
           </div>
         </div>
-      </>
+      </main>
     )
   }
 

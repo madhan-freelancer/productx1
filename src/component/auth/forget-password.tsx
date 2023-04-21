@@ -7,7 +7,7 @@ import { Form, } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-
+import logoone from '../assets/img/product x1-2.png';
 export default class Forgetpassword extends Component {
     render() {
         return (
@@ -23,9 +23,9 @@ export default class Forgetpassword extends Component {
                                 <div className="text-left text-muted mb-4">
                                     <img
                                         alt="Logo"
-                                        className="mb-2 mt-3"
-                                        width='280'
-                                        src={logo}
+                                        className="image"
+                        width='80'
+                                        src={logoone}
                                     />
                                     <h2 className='mb-0'>Forgot your Password? Well, let's fix that!
                                     </h2>

@@ -6,7 +6,7 @@ import { Col, FormGroup, Input, InputGroup, Row } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faBoxOpen, faChartLine, faChartPie, faChartSimple, faChevronDown, faDollarSign, faGear, faMoneyBillWave, faShippingFast } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-
+import { callApi } from "../../utils/api";
 
 
 export default function Sidebar() {
@@ -93,7 +93,7 @@ export default function Sidebar() {
                     <li>
                         <a href="#">
                             <span className="icon"><FontAwesomeIcon icon={faGear} /></span>
-                            <span className="title">Setting</span>
+                            <span className="title">Settings</span>
                         </a>
                     </li>
                     <footer>
@@ -115,8 +115,8 @@ export default function Sidebar() {
                                     {isOpen && (
                                         <div className="profile-card-content">
                                             <div><label> <a  href="/profile"> Profile </a></label></div>
-                                            <div><label>Referal program</label></div>
-                                            <div><label>Logout</label></div>
+                                            <div><label> Referal program</label></div>
+                                            <div><label> <a  href="/"> Logout</a></label></div>
                                         </div>
                                     )}
                                 </div>
