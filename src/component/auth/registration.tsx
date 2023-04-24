@@ -63,9 +63,9 @@ export default class Registration extends Component {
         if (response['success'] == true) {
           toast.success("Registration successful!", {
           });
-        
+
           setTimeout(() => {
-            window.location.href = "/"; 
+            window.location.href = "/";
           }, 1000);
         } else {
           alert("Enter Email and Password to Proceed");
@@ -78,103 +78,108 @@ export default class Registration extends Component {
   render() {
     return (
       <main>
-        <ToastContainer
-  position="bottom-center"
-  autoClose={1000}
-  hideProgressBar={true}
-  // newestOnTop={false}
-  closeOnClick
-  rtl={false}
-  closeButton={false}
-  // pauseOnFocusLoss
-  // draggable
-  // pauseOnHover
-  style={{ top: 490, left: 483, right: 0, bottom: 0 ,width: 400}}
-/>
+   
 
 
-      <div className="main">
-         
-        <div className="container">
-          <Row style={{ height: "500px" }}>
-            <Col xs={6} md={6} style={{ background: " #fff " }}>
-              <div className="p-4 pl-6 pr-6 ">
-                <CardBody className="">
-                  <div className="text-left text-muted mb-3" style={{ marginLeft: "0%", paddingTop: "0px", paddingBottom: "0px" }}>
-                    <img
-                      alt="Logo"
-                      className="image"
-                      width='80'
-                      src={logoone}
-                    />
-                  </div>
-                  <Form >
+        <div className="main">
 
-                    <FormGroup className="mb-3">
-                      <Form.Field>
-                        <label className="label" style={{ marginTop: "-25px" }}>
-                          Your Name
-                        </label>
-                        <InputGroup className="input-group">
-                          <div>
-                            <FontAwesomeIcon icon={faUser} className="fontawesome" />
-                            <Input placeholder='Name' type="text" name="name" className="inputclass" onChange={this.onchange} />
-                          </div>
-                        </InputGroup>
-                        <div className="text-danger">{this.state.nameError}</div>
-                      </Form.Field>
-                    </FormGroup>
-                    <FormGroup className="mb-3">
-                      <Form.Field>
-                        <label className="label">
-                          Your Email
-                        </label>
-                        <InputGroup className="input-group">
-                          <div>
-                            <FontAwesomeIcon icon={faEnvelope} className="fontawesome" />
-                            <Input placeholder='Email' type="email" name="email" className="inputclass" onChange={this.onchange} />
-                          </div>
-                        </InputGroup>
-                        <div className="text-danger">{this.state.emailError}</div>
-                      </Form.Field>
-                    </FormGroup>
-                    <FormGroup className="mb-3">
-                      <Form.Field>
-                        <label className="label" >
-                          Password
-                        </label>
-                        <InputGroup className="input-group">
-                          <div>
-                            <FontAwesomeIcon icon={faLockOpen} className="fontawesome" />
-                            <Input placeholder="Password" type="password" name="password" className="inputclass" onChange={this.onchange} />
-                          </div>
-                        </InputGroup>
-                        <div className="text-danger">{this.state.passwordError}</div>
-                      </Form.Field>
-                    </FormGroup>
-
-                    <div className=" custom-control-alternative custom-checkbox">
-                      <Button className=" cta cta-fullwidth " color="primary" type="submit" onClick={this.handleClick}>
-                        Create your account
-                      </Button>
+          <div className="container">
+            <Row style={{ height: "500px" }}>
+              <Col xs={6} md={6} style={{ background: " #fff " }}>
+                <div className="p-4 pl-6 pr-6 ">
+                  <CardBody className="">
+                    <div className="text-left text-muted mb-3" style={{ marginLeft: "0%", paddingTop: "0px", paddingBottom: "0px" }}>
+                      <img
+                        alt="Logo"
+                        className="image"
+                        width='80'
+                        src={logoone}
+                      />
                     </div>
-                  </Form>
-                  <p className="mt-3 mb-0 text-center" style={{ marginRight: "30%" }}> Already have an account? <a className="text-cta" href="/"> Login Here </a></p>
-                </CardBody>
-              </div>
-            </Col>
-            <Col lg="6" md="6" className="text-center bg-blue p-4">
-              <img alt="Logo"
-                className="img-fluid"
-                width='400px' src={logoone} style={{ marginTop: "-50px" }} />
-              <h1 style={{ marginTop: "0%" }}> Product X1</h1>
-              <p>Access the lowest USPS rates in the industry and seriously discounted UPS rates, easy shipping automation, and award-winning support!</p>
-            </Col>
-          </Row>
+                    <Form >
+
+                      <FormGroup className="mb-3">
+                        <Form.Field>
+                          <label className="label" style={{ marginTop: "-25px" }}>
+                            Your Name
+                          </label>
+                          <InputGroup className="input-group">
+                            <div>
+                              <FontAwesomeIcon icon={faUser} className="fontawesome" />
+                              <Input placeholder='Name' type="text" name="name" className="inputclass" onChange={this.onchange}  onFocus={() => this.setState({ nameError: "" })} />
+                            </div>
+                          </InputGroup>
+                          <div className="text-danger">{this.state.nameError}</div>
+                        </Form.Field>
+                      </FormGroup>
+                      <FormGroup className="mb-3">
+                        <Form.Field>
+                          <label className="label">
+                            Your Email
+                          </label>
+                          <InputGroup className="input-group">
+                            <div>
+                              <FontAwesomeIcon icon={faEnvelope} className="fontawesome" />
+                              <Input placeholder='Email' type="email" name="email" className="inputclass" onChange={this.onchange}  onFocus={() => this.setState({ emailError: "" })} />
+                            </div>
+                          </InputGroup>
+                          <div className="text-danger">{this.state.emailError}</div>
+                        </Form.Field>
+                      </FormGroup>
+                      <FormGroup className="mb-3">
+                        <Form.Field>
+                          <label className="label" >
+                            Password
+                          </label>
+                          <InputGroup className="input-group">
+                            <div>
+                              <FontAwesomeIcon icon={faLockOpen} className="fontawesome" />
+                              <Input placeholder="Password" type="password" name="password" className="inputclass" onChange={this.onchange}  onFocus={() => this.setState({ passwordError: "" })} />
+                            </div>
+                          </InputGroup>
+                          <div className="text-danger">{this.state.passwordError}</div>
+                        </Form.Field>
+                      </FormGroup>
+
+                      <div className=" custom-control-alternative custom-checkbox">
+                        <Button className=" cta cta-fullwidth " color="primary" type="submit" onClick={this.handleClick}>
+                          Create your account
+                        </Button>
+                      </div>
+                    </Form>
+                    <p className="mt-3 mb-0 text-center" style={{ marginRight: "30%" }}> Already have an account? <a className="text-cta" href="/"> Login Here </a></p>
+                  </CardBody>
+                </div>
+              </Col>
+              <Col lg="6" md="6" className="text-center bg-blue p-4">
+                <img alt="Logo"
+                  className="img-fluid"
+                  width='400px' src={logoone} style={{ marginTop: "-50px" }} />
+                <h1 style={{ marginTop: "0%" }}> Product X1</h1>
+                <p>Access the lowest USPS rates in the industry and seriously discounted UPS rates, easy shipping automation, and award-winning support!</p>
+              </Col>
+            </Row>
+            <ToastContainer className={"toastregister"}
+          position="top-center"
+          autoClose={1000}
+          hideProgressBar={true}
+          // newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          closeButton={false}
+          // pauseOnFocusLoss
+          // draggable
+          // pauseOnHover
+          style={{ position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",width:"270px", height: "100px"}}
+        />
+
+          </div>
         </div>
-      </div>
       </main>
     )
-    
+
   }
 }

@@ -1,6 +1,8 @@
 import axios from "axios";
-//  export const API_ENDPOINT = "http://lawhands.org/law_hands/api/";
- export const API_ENDPOINT = " http://localhost/zerame1/zerame/";
+ export const API_ENDPOINT = "http://zerame.com/productx1/";
+
+
+//  export const API_ENDPOINT = " http://localhost/zerame1/zerame/";
 
 
 export async function callApi(method: string, path: string, data?: any) {

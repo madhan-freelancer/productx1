@@ -17,13 +17,6 @@ export default function Sidebar() {
         setIsOpen(!isOpen);
         console.log(0);
     }
-
-    // const { avatar } = Props;
-
-    // if (!avaterone) {
-    //     return <div>No avatar selected</div>;
-    // }
-
     return (
         <><div>
 
@@ -39,7 +32,7 @@ export default function Sidebar() {
                     <li>
                         <FormGroup>
 
-                            <InputGroup className="input-group">
+                            <InputGroup >
                                 <div>
                                     <FaSearch style={{ marginLeft: "180px", cursor: 'pointer' }} />
                                     <Input type="text" placeholder="Search order history" style={{ marginTop: "-27px", marginLeft: "12px" }} />
@@ -100,32 +93,31 @@ export default function Sidebar() {
                         <Row className="rowone" style={{ marginTop: "40px" }}>
                             <Col xs={4} md={4}>
                                 <div className="avatar-card">
-
                                 </div>
-
                             </Col>
-                            <Col xs={6} md={6}>
-
-                                <div className="profile-card" onClick={toggleOpenon}>
-                                    <div className="profile-card-header" style={{ marginLeft: "-70px" }}>
-                                        <h5 onClick={toggleOpenon}>yourname
-                                            <FontAwesomeIcon icon={faChevronDown} /></h5>
-                                        {/* <div className="profile-card-name"><h1>hello</h1></div> */}
-                                    </div>
+                            <Col xs={6} md={6}  >
+                                <div className="profile-card" >
+                                    <div style={{ display: "flex" }} >
+                                        <h5 onClick={toggleOpenon}>yourname</h5>
+                                        <div onClick={toggleOpenon}>
+                                            <FontAwesomeIcon icon={faChevronDown} />
+                                        </div>
+                                        <div style={{paddingLeft: "15px"}}>
+                                            <FontAwesomeIcon icon={faBell} />
+                                        </div>
+                                   </div>
                                     {isOpen && (
                                         <div className="profile-card-content">
-                                            <div><label> <a  href="/profile"> Profile </a></label></div>
+                                            <div><label> <a href="/profile"> Profile </a></label></div>
                                             <div><label> Referal program</label></div>
-                                            <div><label> <a  href="/"> Logout</a></label></div>
+                                            <div><label> <a href="/"> Logout</a></label></div>
                                         </div>
                                     )}
                                 </div>
 
                             </Col>
                             <Col xs={2} md={2}>
-                                <div style={{ marginLeft: "-120px" }}>
-                                    <FontAwesomeIcon icon={faBell} />
-                                </div>
+
                             </Col>
                         </Row>
                     </footer>

@@ -68,11 +68,11 @@ export default class Login extends Component {
 
           setTimeout(() => {
             window.location.href = "/dashboard"; 
-          }, 2000);
+          }, 1000);
          
         } else {
           // alert("Enter Email and Password to Proceed");
-          toast.success("Login Unsuccessful!", {hideProgressBar: true,icon:false,
+          toast.success("Email & password are not matched!", {hideProgressBar: true,icon:false,autoClose:1000,closeOnClick:false,
           });
         }
       })
@@ -84,9 +84,9 @@ export default class Login extends Component {
   render() {
     return (
       <main>
-                <ToastContainer
+                <ToastContainer className={"toastregister"}
   position="top-center"
-  autoClose={2000}
+  autoClose={1000}
   hideProgressBar={true}
   newestOnTop={false}
   closeButton={false}
@@ -95,7 +95,10 @@ export default class Login extends Component {
   pauseOnFocusLoss
   draggable
   pauseOnHover
-  style={{ top: 450, left: 483, right: 0, bottom: 0 ,width: 400}}
+  style={{ position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",width:"270px", height: "100px"}}
 />
 
 
@@ -123,7 +126,7 @@ export default class Login extends Component {
                             <div>
                               <FontAwesomeIcon icon={faEnvelope} className="fontawesome" />
                               <Input placeholder='Email' type="email" className="inputclass" name="email"
-                                onChange={this.onchange} />
+    onChange={this.onchange} onFocus={() => this.setState({ emailError: "" })} />
                             </div>
                           </InputGroup>
                           <div className="text-danger">{this.state.emailError}</div>
@@ -138,7 +141,8 @@ export default class Login extends Component {
                             <div>
                               <FontAwesomeIcon icon={faLock} className="fontawesome" />
                               <Input placeholder="Password" type="password" name="password" className="inputclass"
-                                onChange={this.onchange} />
+    onChange={this.onchange} onFocus={() => this.setState({ passwordError: "" })} />
+      
                             </div>
                           </InputGroup>
                           <div className="text-danger">{this.state.passwordError}</div>
