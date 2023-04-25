@@ -4,7 +4,7 @@ import avaterone from '../assets/img/download.png';
 import { FaSearch } from "react-icons/fa";
 import { Col, FormGroup, Input, InputGroup, Row } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faBoxOpen, faChartLine, faChartPie, faChartSimple, faChevronDown, faDollarSign, faGear, faMoneyBillWave, faShippingFast } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faBoxOpen, faChartLine, faChartPie, faChartSimple, faChevronDown, faDollarSign, faGear, faMailBulk, faMoneyBillWave, faShippingFast } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { callApi } from "../../utils/api";
 
@@ -60,7 +60,13 @@ export default function Sidebar() {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/supplies">
+                            <span className="icon">  <FontAwesomeIcon icon={faMailBulk} /></span>
+                            <span className="title">Supplies</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tracking">
                             <span className="icon"> <FontAwesomeIcon icon={faShippingFast} /></span>
                             <span className="title">Tracking</span>
                         </a>
@@ -102,10 +108,10 @@ export default function Sidebar() {
                                         <div onClick={toggleOpenon}>
                                             <FontAwesomeIcon icon={faChevronDown} />
                                         </div>
-                                        <div style={{paddingLeft: "15px"}}>
+                                        <div style={{ paddingLeft: "15px" }}>
                                             <FontAwesomeIcon icon={faBell} />
                                         </div>
-                                   </div>
+                                    </div>
                                     {isOpen && (
                                         <div className="profile-card-content">
                                             <div><label> <a href="/profile"> Profile </a></label></div>

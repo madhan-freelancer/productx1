@@ -1,7 +1,6 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import react from "react";
+import React from "react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import Login from './component/auth/login';
@@ -10,20 +9,26 @@ import Forgetpassword from './component/auth/forget-password';
 import Profile from './component/pages/profile';
 import Dashboard from './component/pages/dashboard';
 import Sidebar from './component/pages/sidebar';
-function App() {
-  return (
-    <div className="App">
-      {/* <Sidebar /> */}
-      <Routes>
-        
-        <Route path="/" Component={Login} />
-        <Route path="/registration" Component={Registration} />
-        <Route path="/forget-password" Component={Forgetpassword} />
-        <Route path="/profile" Component={Profile} />
-        <Route path="/dashboard" Component={Dashboard} />
-      </Routes>
-    </div>
-  );
+import Supplies from './component/pages/supplies';
+import Tracking from './component/pages/tracking';
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        {/* <Sidebar /> */}
+        <Routes>
+          <Route path="/" Component={Login} />
+          <Route path="/registration" Component={Registration} />
+          <Route path="/forget-password" Component={Forgetpassword} />
+          <Route path="/profile" Component={Profile} />
+          <Route path="/dashboard" Component={Dashboard} />
+          <Route path="/supplies" Component={Supplies} />
+          <Route path="/tracking" Component={Tracking} />
+
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
