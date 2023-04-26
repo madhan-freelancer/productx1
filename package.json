@@ -1,7 +1,6 @@
 {
   "name": "roundview",
   "version": "0.1.0",
-  "homepage": "https://madhan-freelancer.github.io/productx1",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
