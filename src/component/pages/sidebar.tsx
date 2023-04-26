@@ -72,7 +72,7 @@ export default function Sidebar() {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/products">
                             <span className="icon"> <FontAwesomeIcon icon={faBoxOpen} /></span>
                             <span className="title">Products</span>
                         </a>

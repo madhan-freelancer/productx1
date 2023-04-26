@@ -11,6 +11,7 @@ import Dashboard from './component/pages/dashboard';
 import Sidebar from './component/pages/sidebar';
 import Supplies from './component/pages/supplies';
 import Tracking from './component/pages/tracking';
+import Products from './component/pages/products';
 class App extends React.Component {
   render() {
     return (
@@ -24,6 +25,7 @@ class App extends React.Component {
           <Route path="/dashboard" Component={Dashboard} />
           <Route path="/supplies" Component={Supplies} />
           <Route path="/tracking" Component={Tracking} />
+          <Route path="/products" Component={Products} />
 
         </Routes>
       </div>
